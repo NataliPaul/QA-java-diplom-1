@@ -18,18 +18,24 @@ public class Burger {
         this.bun = bun;
     }
 
+    //Метод добавляет ингредиент в бургер.
+    //Принимает объект класса Ingredient и добавляет его в список ingredients
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
     }
 
+    //Метод Удаляет ингредиент из бургера по индексу.
+    //Удаляет элемент из списка ingredients по указанному индексу.
     public void removeIngredient(int index) {
         ingredients.remove(index);
     }
 
+    //Метод изменяет индекс ингредиента в списке
     public void moveIngredient(int index, int newIndex) {
         ingredients.add(newIndex, ingredients.remove(index));
     }
 
+    //Метод рассчитывает и возвращает общую цену бургера
     public float getPrice() {
         float price = bun.getPrice() * 2;
 
@@ -40,6 +46,7 @@ public class Burger {
         return price;
     }
 
+    //Метод формирует и возвращает строку с чеком на бургер
     public String getReceipt() {
         StringBuilder receipt = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
 
